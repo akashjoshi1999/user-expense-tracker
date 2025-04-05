@@ -14,6 +14,15 @@
             <flux:navlist variant="outline">
                 <flux:navlist.group :heading="__('Platform')" class="grid">
                     <flux:navlist.item icon="home" :href="route('dashboard')" :current="request()->routeIs('dashboard')" wire:navigate>{{ __('Dashboard') }}</flux:navlist.item>
+                    
+                    <!-- Add these new expense-related items -->
+                    <flux:navlist.item icon="currency-dollar" :href="route('expenses.index')" :current="request()->routeIs('expenses.*')" wire:navigate>
+                        {{ __('Expenses') }}
+                    </flux:navlist.item>
+                    
+                    <flux:navlist.item icon="chart-bar" :href="route('expenses.index')" :current="request()->routeIs('expenses.index')" wire:navigate>
+                        {{ __('Reports') }}
+                    </flux:navlist.item>
                 </flux:navlist.group>
             </flux:navlist>
 
